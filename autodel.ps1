@@ -15,6 +15,15 @@ Foreach ($i in $filePath) {
     Write-Output "."
 }    
 
+# Show file list to delete
+Write-Output "List of files to delete"
+Foreach ($i in $filePath) {
+    Write-Output $i
+    ForFiles /p "Y:\$i" /d -5
+    Write-Output "."
+    Write-Output "."
+}
+
 # Get user input
 $usrInput = Read-Host -Prompt "Press Y to continue" 
 
